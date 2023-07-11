@@ -16,6 +16,22 @@ export const productData = {
       date: "2023-07-03",
       price: "28699",
     },
+    {
+      date: "2023-07-05",
+      price: "28000",
+    },
+    {
+      date: "2023-07-06",
+      price: "28200",
+    },
+    {
+      date: "2023-07-08",
+      price: "26800",
+    },
+    {
+      date: "2023-07-10",
+      price: "27000",
+    },
   ],
   __v: 1,
   historicalHigh: "28699",
