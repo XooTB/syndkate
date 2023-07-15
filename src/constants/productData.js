@@ -1,39 +1,31 @@
 export const productData = {
   _id: {
-    $oid: "649d4bbc6d498e7d4e8f25d4",
+    $oid: "649d4c576d498e7d4e8f5aea",
   },
-  productTitle: "AMD Ryzen 5 5600G Budget Desktop PC",
+  productTitle: "Samsung 980 Pro 1TB PCIe 4.0 M.2 NVMe SSD",
   store: "StarTech",
   image:
-    "https://www.startech.com.bd/image/cache/catalog/desktop-pc/desktop-offer/ryzen-5-5600g-budget-desktop-pc-01-228x228.webp",
-  latestPrice: "28699",
+    "https://www.startech.com.bd/image/cache/catalog/ssd/samsung/980-pro/980-pro-001-228x228.jpg",
+  latestPrice: "10700",
   priceHistory: [
     {
       date: "2023-06-29",
-      price: "28643",
+      price: "11000",
     },
     {
       date: "2023-07-03",
-      price: "28699",
+      price: "11399",
     },
     {
-      date: "2023-07-05",
-      price: "28000",
-    },
-    {
-      date: "2023-07-06",
-      price: "28200",
+      date: "2023-07-04",
+      price: "10999",
     },
     {
       date: "2023-07-08",
-      price: "26800",
-    },
-    {
-      date: "2023-07-10",
-      price: "27000",
+      price: "10700",
     },
   ],
-  __v: 1,
-  historicalHigh: "28699",
-  historicalLow: "28643",
+  __v: 3,
+  historicalHigh: "11399",
+  historicalLow: "10700",
 };

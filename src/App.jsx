@@ -8,10 +8,10 @@ import Footer from "./sections/Footer";
 function App() {
   return (
     <div className="">
-      <nav className="h-[100px]">
+      <nav className="w-full">
         <NavBar />
       </nav>
-      <div className="min-h-[calc(100vh-200px)] px-[100px]">
+      <div className="min-h-[calc(100vh-110px)] md:min-h-[calc(100vh-200px)] md:px-[100px]">
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
           <Route path="/about" element={<About />} />

@@ -37,7 +37,7 @@ const Product = () => {
         <div className="w-1/2 flex justify-end">
           <img
             src={product.image}
-            className="max-h-[25vw] max-w-[25vw] min-h-[22vw]  border-solid border-2 border-text rounded-2xl mr-[5vw]"
+            className="max-h-[25vw] max-w-[25vw] min-h-[22vw] border-solid border-2 border-text rounded-2xl mr-[5vw]"
           />
         </div>
         <div className="w-1/2 font-noto">
@@ -107,7 +107,11 @@ const Product = () => {
           </select>
         </div>
         <div>
-          <PriceGraph data={data} />
+          <PriceGraph
+            data={data}
+            min={parseInt(product.historicalLow)}
+            max={parseInt(product.historicalHigh)}
+          />
         </div>
       </div>
     </div>

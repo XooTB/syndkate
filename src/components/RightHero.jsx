@@ -9,9 +9,9 @@ const RightHero = ({ ref, springs, handleClick, styles }) => {
       style={{
         ...springs,
       }}
-      className="bg-background flex items-center flex-col mt-[100px] h-[100%]"
+      className="bg-background flex items-center flex-col md:mt-[100px] md:h-[100%]"
     >
-      <p className="text-text font-semibold text-xl text-center pb-4">
+      <p className="text-text font-semibold text-center text-base py-5 md:text-lg md:py-6">
         Search the Historical prices of Tech Products in Bangladesh
       </p>
       <div className="flex justify-center items-center w-full">

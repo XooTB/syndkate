@@ -1,57 +1,120 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Search from "./Search";
 import { animated, useSpring } from "@react-spring/web";
 import useMeasure from "react-use-measure";
 import LeftHero from "../components/LeftHero";
 import RightHero from "../components/RightHero";
 
-const Hero = () => {
+const Hero = ({ windWidth }) => {
   const [isOpen, toggle] = useState(false);
+  const [leftRef, { width, height }] = useMeasure();
 
-  const [leftSprings, leftApi] = useSpring(() => ({
-    from: { x: 0, width: "50vw", "font-size": "4.5rem" },
-  }));
+  const [leftSpring, leftAnimation] = useSpring(() => {
+    if (windWidth >= 768) {
+      console.log(windWidth);
+      return {
+        from: { x: 0, width: "1vw", fontSize: "0rem" },
+        to: { x: 0, width: "50vw", fontSize: "4rem", alignItems: "start" },
+      };
+    } else {
+      return {
+        from: { x: 0, width: "50vw", fontSize: "0rem" },
+        to: {
+          x: 0,
+          width: "100vw",
+          height: "25vh",
+          fontSize: "2.5rem",
+          alignItems: "center",
+        },
+      };
+    }
+  }, [windWidth]);
 
-  const [rightSprings, rightApi] = useSpring(() => ({
-    from: { width: "50vw" },
-  }));
+  const [rightSpring, rightAnimation] = useSpring(() => {
+    if (windWidth >= 768) {
+      return {
+        from: { width: "1vw" },
+        to: { width: "50vw" },
+      };
+    } else {
+      return {
+        from: { width: "50vw", height: "1vw" },
+        to: { width: "100vw", height: "23vw" },
+      };
+    }
+  }, [windWidth]);
 
-  const [leftRef, { width }] = useMeasure();
+  // const [smLeftSpring, smLeft] = useSpring(() => )
 
   const handleLeft = () => {
     toggle(!isOpen);
 
-    if (isOpen) {
-      leftApi.start({
-        from: { x: -width - 100, width: "0vw", "font-size": "1rem" },
-        to: { x: 0, width: "50vw", "font-size": "4.5rem" },
-      });
+    if (windWidth >= 768) {
+      // animations for larger Screens
 
-      rightApi.start({
-        from: { width: "100vw" },
-        to: { width: "50vw" },
-      });
+      if (isOpen) {
+        leftAnimation.start({
+          from: { x: -width - 100, width: "0vw", fontSize: "1rem" },
+          to: { x: 0, width: "50vw", fontSize: "4rem" },
+        });
+
+        rightAnimation.start({
+          from: { width: "100vw" },
+          to: { width: "50vw" },
+        });
+      } else {
+        leftAnimation.start({
+          from: { x: 0, width: "50vw", fontSize: "4rem" },
+          to: { x: width ? -width - 100 : 0, width: "0vw", fontSize: "1rem" },
+        });
+        rightAnimation.start({
+          from: { width: "50vw" },
+          to: { width: "100vw", x: 0 },
+        });
+      }
+      //
+      //
+      // End of lg animations
     } else {
-      leftApi.start({
-        from: { x: 0, width: "50vw", "font-size": "4.5rem" },
-        to: { x: width ? -width - 100 : 0, width: "0vw", "font-size": "1rem" },
-      });
-      rightApi.start({
-        from: { width: "50vw" },
-        to: { width: "100vw", x: 0 },
-      });
+      //
+      //
+      // Animations for smaller screens
+
+      if (isOpen) {
+        leftAnimation.start({
+          from: { y: -height - 100, height: "0vw", fontSize: "0rem" },
+          to: { y: 0, height: "25vh", fontSize: "2.5rem" },
+        });
+
+        // Right Hero animations
+
+        rightAnimation.start({
+          from: { height: "50vh" },
+          to: { height: "25vh" },
+        });
+      } else {
+        leftAnimation.start({
+          from: { y: 0, height: "25vh", fontSize: "2.5 rem" },
+          to: { y: -height - 100, height: "0vh", fontSize: "0rem" },
+        });
+
+        // Right Hero Animations for closed;
+
+        rightAnimation.start({
+          from: { height: "25vh" },
+          to: { height: "50vh" },
+        });
+      }
     }
   };
 
-  const handleRight = () => {};
-
   return (
-    <div className="hero pt-[50px] flex flex-row">
+    <div className="hero pt-[50px] flex flex-col md:flex-row">
       {/* Left Container */}
-      <LeftHero elementRef={leftRef} springs={leftSprings} />
+      <LeftHero elementRef={leftRef} springs={leftSpring} />
 
       {/* Right Container */}
-      <RightHero handleClick={handleLeft} springs={rightSprings} />
+      <RightHero handleClick={handleLeft} springs={rightSpring} />
     </div>
   );
 };

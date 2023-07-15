@@ -2,14 +2,14 @@ import React from "react";
 import { ResponsiveLine } from "@nivo/line";
 import { graphTheme } from "../constants/graphTheme";
 
-const PriceGraph = ({ data }) => {
+const PriceGraph = ({ data, min, max }) => {
   return (
     <div className="h-[500px] pb-5 w-1/2">
       <ResponsiveLine
         data={data}
         margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
         theme={graphTheme}
-        height={500}
+        height={400}
         width={1200}
         xScale={{
           format: "%Y-%m-%d",
@@ -19,10 +19,8 @@ const PriceGraph = ({ data }) => {
         }}
         yScale={{
           type: "linear",
-          min: "auto",
-          max: "auto",
-          stacked: true,
-          reverse: false,
+          min: min - 2000,
+          max: max + 2000,
         }}
         curve="monotoneX"
         xFormat="time:%Y-%m-%d"
