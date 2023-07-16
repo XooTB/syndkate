@@ -33,14 +33,14 @@ const Product = () => {
 
   return (
     <div className="pt-[75px]">
-      <div className="flex flex-1 justify-center">
-        <div className="w-1/2 flex justify-end">
+      <div className="flex flex-1 justify-center flex-col md:flex-row items-center">
+        <div className="w-full flex justify-center flex-1 md:w-1/2 mb-5">
           <img
             src={product.image}
-            className="max-h-[25vw] max-w-[25vw] min-h-[22vw] border-solid border-2 border-text rounded-2xl mr-[5vw]"
+            className="border-solid border-2 border-text rounded-xl p-5 w-3/4 min-w-2/4 md:max-w-[60%]"
           />
         </div>
-        <div className="w-1/2 font-noto">
+        <div className="w-full md:w-1/2 px-12 font-noto">
           <h1 className="text-3xl font-changa ">{product.productTitle}</h1>
           <p className="text-lg pb-5 pt-1">
             <span className="font-bold">Store:</span> {product.store}
@@ -49,7 +49,7 @@ const Product = () => {
           {/* table section */}
 
           <div className="pt-2 w-full font-noto font-medium text-sm">
-            <table className="table-fixed border-collapse w-4/5">
+            <table className="table-fixed border-collapse w-full md:w-4/5">
               <tbody>
                 <tr className="">
                   <td className="border-text-200 border-2 px-3 py-3 pr-12 w-1/2 bg-secondary">
@@ -68,7 +68,7 @@ const Product = () => {
                   </td>
                 </tr>
                 <tr className="">
-                  <td className="border-text-200 border-2 px-3 py-3 pr-12 w-1/2 bg-secondary">
+                  <td className="border-text-200 border-2 px-2 py-3 pr-12 w-1/2 bg-secondary">
                     Historical High
                   </td>
                   <td className="border-text-200 border-2 px-3 py-3 pr-12 w-1/2">
@@ -79,6 +79,7 @@ const Product = () => {
             </table>
 
             {/* Table Section */}
+
             {/* Buttons */}
           </div>
           <div className="w-full mt-7">
@@ -99,14 +100,17 @@ const Product = () => {
         <div className="text-center text-text font-noto font-semibold">
           <h2>Historical Prices</h2>
         </div>
-        <div>
-          <select onChange={handleSelect}>
+        <div className="flex justify-start items-center w-full pl-5 pt-4">
+          <select
+            onChange={handleSelect}
+            className="py-1 px-2 border-2 border-text rounded-lg font-noto text-sm"
+          >
             {dateRanges.map((range) => (
               <option value={range.value}>{range.range}</option>
             ))}
           </select>
         </div>
-        <div>
+        <div className="w-full flex items-center justify-center">
           <PriceGraph
             data={data}
             min={parseInt(product.historicalLow)}

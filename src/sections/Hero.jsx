@@ -21,7 +21,7 @@ const Hero = ({ windWidth }) => {
         from: { x: 0, width: "50vw", fontSize: "0rem" },
         to: {
           x: 0,
-          width: "100vw",
+          width: "96vw",
           height: "25vh",
           fontSize: "2.5rem",
           alignItems: "center",
@@ -39,7 +39,7 @@ const Hero = ({ windWidth }) => {
     } else {
       return {
         from: { width: "50vw", height: "1vw" },
-        to: { width: "100vw", height: "23vw" },
+        to: { width: "96vw", height: "23vw", textAlign: "center" },
       };
     }
   }, [windWidth]);
@@ -59,7 +59,7 @@ const Hero = ({ windWidth }) => {
         });
 
         rightAnimation.start({
-          from: { width: "100vw" },
+          from: { width: "90vw" },
           to: { width: "50vw" },
         });
       } else {
@@ -69,7 +69,7 @@ const Hero = ({ windWidth }) => {
         });
         rightAnimation.start({
           from: { width: "50vw" },
-          to: { width: "100vw", x: 0 },
+          to: { width: "96vw", x: 0 },
         });
       }
       //
