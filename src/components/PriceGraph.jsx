@@ -4,7 +4,7 @@ import { graphTheme } from "../constants/graphTheme";
 
 const PriceGraph = ({ data, min, max }) => {
   return (
-    <div className="h-[500px] pb-5 w-[100%] flex items-center">
+    <div className="h-[500px] pb-5 w-[94%] md:w-[80%] flex items-center">
       <ResponsiveLine
         data={data}
         margin={{ top: 50, right: 40, bottom: 50, left: 60 }}
@@ -17,8 +17,8 @@ const PriceGraph = ({ data, min, max }) => {
         }}
         yScale={{
           type: "linear",
-          min: min - 2000,
-          max: max + 2000,
+          min: min - 1500,
+          max: max + 1500,
         }}
         curve="monotoneX"
         xFormat="time:%Y-%m-%d"

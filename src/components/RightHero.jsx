@@ -1,6 +1,6 @@
 import React from "react";
 import { animated, useResize } from "@react-spring/web";
-import Search from "../sections/Search";
+import SearchBox from "../sections/SearchBox";
 
 const RightHero = ({ ref, springs, handleClick, styles }) => {
   return (
@@ -9,13 +9,13 @@ const RightHero = ({ ref, springs, handleClick, styles }) => {
       style={{
         ...springs,
       }}
-      className="bg-background flex items-center flex-col md:mt-[100px] md:h-[100%]"
+      className="bg-transparent flex items-center flex-col md:justify-center md:h-[100%] md:min-h-[470px]"
     >
-      <p className="text-text font-semibold text-center text-base py-5 md:text-lg md:py-6">
-        Search the Historical prices of Tech Products in Bangladesh
+      <p className="text-text1 font-semibold text-center text-base py-5 md:text-lg md:py-6">
+        Search through the products
       </p>
       <div className="flex justify-center items-center w-full">
-        <Search onClick={handleClick} />
+        <SearchBox onClick={handleClick} />
       </div>
     </animated.div>
   );

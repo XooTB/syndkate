@@ -37,41 +37,44 @@ const Product = () => {
         <div className="w-full flex justify-center flex-1 md:w-1/2 mb-5">
           <img
             src={product.image}
-            className="border-solid border-2 border-text rounded-xl p-5 w-3/4 min-w-2/4 md:max-w-[60%]"
+            className="border-solid border-2 border-accent1 rounded-xl w-3/4 min-w-2/4 md:max-w-[60%]"
           />
         </div>
-        <div className="w-full md:w-1/2 px-12 font-noto">
-          <h1 className="text-3xl font-changa ">{product.productTitle}</h1>
-          <p className="text-lg pb-5 pt-1">
-            <span className="font-bold">Store:</span> {product.store}
+        <div className="w-full md:w-1/2 px-12 font-opensans">
+          <h1 className="text-2xl md:text-3xl font-inika text-text1 font-semibold">
+            {product.productTitle}
+          </h1>
+          <p className="text-lg pb-5 pt-1 md:pt-2 text-text1 font-semibold">
+            <span className="font-bold text-accent1">Store:</span>{" "}
+            {product.store}
           </p>
 
           {/* table section */}
 
           <div className="pt-2 w-full font-noto font-medium text-sm">
-            <table className="table-fixed border-collapse w-full md:w-4/5">
+            <table className="table-fixed border-collapse w-full md:w-4/5 text-text1 text-sm">
               <tbody>
                 <tr className="">
-                  <td className="border-text-200 border-2 px-3 py-3 pr-12 w-1/2 bg-secondary">
+                  <td className=" border-accent1 border-2 px-3 py-3 pr-12 w-1/2 bg-accent1 bg-opacity-40 font-semibold">
                     Current Price
                   </td>
-                  <td className="border-text-200 border-2 px-3 py-3 pr-12 w-1/2 ">
+                  <td className=" border-accent1 border-2 px-3 py-3 pr-12 w-1/2 ">
                     {product.latestPrice}
                   </td>
                 </tr>
                 <tr className="">
-                  <td className="border-text-200 border-2 px-3 py-3 pr-12 w-1/2 bg-secondary">
+                  <td className=" border-accent1 border-2 px-3 py-3 pr-12 w-1/2 bg-accent1 bg-opacity-40 font-semibold">
                     Historical Low
                   </td>
-                  <td className="border-text-200 border-2 px-3 py-3 pr-12 w-1/2">
+                  <td className=" border-accent1 border-2 px-3 py-3 pr-12 w-1/2">
                     {product.historicalLow}
                   </td>
                 </tr>
                 <tr className="">
-                  <td className="border-text-200 border-2 px-2 py-3 pr-12 w-1/2 bg-secondary">
+                  <td className=" border-accent1 border-2 px-2 py-3 pr-12 w-1/2 bg-accent1 bg-opacity-40 font-semibold">
                     Historical High
                   </td>
-                  <td className="border-text-200 border-2 px-3 py-3 pr-12 w-1/2">
+                  <td className=" border-accent1 border-2 px-3 py-3 pr-12 w-1/2">
                     {product.historicalHigh}
                   </td>
                 </tr>
@@ -83,8 +86,8 @@ const Product = () => {
             {/* Buttons */}
           </div>
           <div className="w-full mt-7">
-            <a href="#">
-              <button className="px-5 py-3 bg-primary text-background font-changa rounded-xl tracking-wide hover:bg-secondary hover:text-text">
+            <a href={product.productLink ? product.productLink : "#"}>
+              <button className="px-5 py-3 bg-primary1 text-background font-changa rounded-xl tracking-wide hover:bg-secondary1 hover:text-text1">
                 See in Store
               </button>
             </a>
@@ -96,14 +99,14 @@ const Product = () => {
       {/*  */}
       {/*  */}
 
-      <div className="w-full pt-10 h-[600px] flex justify-center items-left flex-col">
-        <div className="text-center text-text font-noto font-semibold">
-          <h2>Historical Prices</h2>
+      <div className="w-full pt-5 h-[650px] flex justify-center items-left flex-col bg-background1 bg-opacity-40">
+        <div className="text-center text-text1 font-inika text-xl font-medium">
+          <h2>Historical Price Movement</h2>
         </div>
-        <div className="flex justify-start items-center w-full pl-5 pt-4">
+        <div className="flex justify-start items-center w-full pl-5 md:pl-[135px] pb-5 pt-4">
           <select
             onChange={handleSelect}
-            className="py-1 px-2 border-2 border-text rounded-lg font-noto text-sm"
+            className="py-1 px-2 border-2 border-accent1 rounded-lg font-noto text-sm"
           >
             {dateRanges.map((range) => (
               <option value={range.value}>{range.range}</option>

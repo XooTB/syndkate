@@ -2,11 +2,11 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="px-[50px] pt-12">
-      <h1 className=" text-6xl font-changa pb-10">
-        About <span className="font-keania">SyndKate</span>
+    <div className="px-[50px] md:px-[150px] pt-12 text-text1 bg-background1 bg-opacity-50">
+      <h1 className="text-4xl md:text-5xl font-inika font-semibold pb-10">
+        About <span className="font-keania capitalize">SyndKate</span>
       </h1>
-      <p className="font-noto text-xl pr-[50px] pb-[100px]">
+      <p className="font-opensans font-light text-base md:text-xl pr-[20px] md:pr-[50px] pb-[100px]">
         Syndkate is a hobby project. Its purpose is to provide a platform in
         Bangladesh that helps buyers understand the market prices of tech
         products more easily. The idea for this project came about when I
@@ -42,7 +42,7 @@ const About = () => {
         confidence.
         <br />
         <br />
-        <span className="font-keania text-lg">- Creator</span>
+        <span className="font-keania text-base md:text-lg">- Creator</span>
       </p>
     </div>
   );

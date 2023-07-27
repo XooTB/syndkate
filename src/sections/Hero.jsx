@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import Search from "./Search";
+import Search from "./SearchBox";
 import { animated, useSpring } from "@react-spring/web";
 import useMeasure from "react-use-measure";
 import LeftHero from "../components/LeftHero";
@@ -14,7 +14,12 @@ const Hero = ({ windWidth }) => {
       console.log(windWidth);
       return {
         from: { x: 0, width: "1vw", fontSize: "0rem" },
-        to: { x: 0, width: "50vw", fontSize: "4rem", alignItems: "start" },
+        to: {
+          x: 0,
+          width: "50vw",
+          fontSize: "3.5rem",
+          alignItems: "start",
+        },
       };
     } else {
       return {
@@ -38,8 +43,8 @@ const Hero = ({ windWidth }) => {
       };
     } else {
       return {
-        from: { width: "50vw", height: "1vw" },
-        to: { width: "96vw", height: "23vw", textAlign: "center" },
+        from: { width: "50vw", height: "1vh" },
+        to: { width: "96vw", height: "25vh", textAlign: "center" },
       };
     }
   }, [windWidth]);
@@ -55,21 +60,21 @@ const Hero = ({ windWidth }) => {
       if (isOpen) {
         leftAnimation.start({
           from: { x: -width - 100, width: "0vw", fontSize: "1rem" },
-          to: { x: 0, width: "50vw", fontSize: "4rem" },
+          to: { x: 0, width: "50vw", fontSize: "3.5rem" },
         });
 
         rightAnimation.start({
-          from: { width: "90vw" },
+          from: { width: "100vw" },
           to: { width: "50vw" },
         });
       } else {
         leftAnimation.start({
-          from: { x: 0, width: "50vw", fontSize: "4rem" },
+          from: { x: 0, width: "50vw", fontSize: "3.5rem" },
           to: { x: width ? -width - 100 : 0, width: "0vw", fontSize: "1rem" },
         });
         rightAnimation.start({
           from: { width: "50vw" },
-          to: { width: "96vw", x: 0 },
+          to: { width: "100vw", x: 0 },
         });
       }
       //
@@ -82,7 +87,7 @@ const Hero = ({ windWidth }) => {
 
       if (isOpen) {
         leftAnimation.start({
-          from: { y: -height - 100, height: "0vw", fontSize: "0rem" },
+          from: { y: -height - 100, height: "0vh", fontSize: "0rem" },
           to: { y: 0, height: "25vh", fontSize: "2.5rem" },
         });
 
@@ -109,7 +114,7 @@ const Hero = ({ windWidth }) => {
   };
 
   return (
-    <div className="hero pt-[50px] flex flex-col md:flex-row">
+    <div className="hero flex flex-col md:flex-row items-center justify-center w-full">
       {/* Left Container */}
       <LeftHero elementRef={leftRef} springs={leftSpring} />
 

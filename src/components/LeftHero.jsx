@@ -8,17 +8,12 @@ const LeftHero = ({ elementRef, springs, onClick }) => {
       style={{
         ...springs,
       }}
-      className="bg-background text-text font-changa h-[100px] leading-none flex flex-col"
+      className="font-expletus text-text1 text-lg md:text-xl leading-none flex flex-col justify-center text-center md:text-left md:px-7 md:min-h-[470px] font-bold"
     >
-      <p>Is it the best time to</p>
-      <div className="flex">
-        <p className="bg-gradient-to-l from-text to-accent bg-clip-text text-transparent w-auto mr-2">
-          Buy?
-        </p>
-        <p className="text-primary"> IDK!</p>
-      </div>
-      <p>Take a Look for</p>
-      <p>yourself!</p>
+      <p className="leading-snug ">
+        Who's offering the Best <span className="text-accent1">Price?</span>
+      </p>
+      <p className=" leading-normal">Find Out!</p>
     </animated.div>
   );
 };

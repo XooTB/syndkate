@@ -1,5 +1,5 @@
 export const graphTheme = {
-  background: "#ffffff",
+  background: "#FFFFFF",
   text: {
     fontSize: 12,
     fill: "#000000",
