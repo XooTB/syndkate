@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import { productData } from "../constants/productData.js";
 import { convertData } from "../utils/convertData.js";
 import PriceGraph from "../components/PriceGraph.jsx";
+import { useParams } from "react-router-dom";
+import useProduct from "../hooks/useProduct.js";
 
 const Product = () => {
-  const product = productData;
+  const { id } = useParams();
+  const { value, isLoading, isError } = useProduct(id);
+  const product = value;
   const [range, setRange] = useState(7);
   const data = convertData(product, range);
 
@@ -37,7 +40,7 @@ const Product = () => {
         <div className="w-full flex justify-center flex-1 md:w-1/2 mb-5">
           <img
             src={product.image}
-            className="border-solid border-2 border-accent1 rounded-xl w-3/4 min-w-2/4 md:max-w-[60%]"
+            className="border-solid border-2 border-accent1 bg-background rounded-xl w-3/4 min-w-2/4 md:max-w-[60%]"
           />
         </div>
         <div className="w-full md:w-1/2 px-12 font-opensans">
@@ -99,7 +102,7 @@ const Product = () => {
       {/*  */}
       {/*  */}
 
-      <div className="w-full pt-5 h-[650px] flex justify-center items-left flex-col bg-background1 bg-opacity-40">
+      <div className="w-full pt-5 h-[650px] flex justify-center items-left flex-col bg-background1 bg-opacity-40 mt-5">
         <div className="text-center text-text1 font-inika text-xl font-medium">
           <h2>Historical Price Movement</h2>
         </div>
@@ -108,17 +111,23 @@ const Product = () => {
             onChange={handleSelect}
             className="py-1 px-2 border-2 border-accent1 rounded-lg font-noto text-sm"
           >
-            {dateRanges.map((range) => (
-              <option value={range.value}>{range.range}</option>
+            {dateRanges.map((range, i) => (
+              <option value={range.value} key={i}>
+                {range.range}
+              </option>
             ))}
           </select>
         </div>
         <div className="w-full flex items-center justify-center">
-          <PriceGraph
-            data={data}
-            min={parseInt(product.historicalLow)}
-            max={parseInt(product.historicalHigh)}
-          />
+          {data ? (
+            <PriceGraph
+              data={data}
+              min={parseInt(product.historicalLow)}
+              max={parseInt(product.historicalHigh)}
+            />
+          ) : (
+            <div></div>
+          )}
         </div>
       </div>
     </div>

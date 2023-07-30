@@ -36,14 +36,16 @@ const sortDates = (arr, dates) => {
 };
 
 export const convertData = (data, range) => {
-  const dates = getNDates(range);
+  if (data.priceHistory.length > 0) {
+    const dates = getNDates(range);
 
-  const dataArr = sortDates(data.priceHistory, dates);
-  return [
-    {
-      id: data.productTitle,
-      color: "#B83F3F",
-      data: dataArr,
-    },
-  ];
+    const dataArr = sortDates(data.priceHistory, dates);
+    return [
+      {
+        id: data.productTitle,
+        color: "#B83F3F",
+        data: dataArr,
+      },
+    ];
+  }
 };

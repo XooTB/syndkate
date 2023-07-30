@@ -1,6 +1,8 @@
 import React from "react";
 import { ResponsiveLine } from "@nivo/line";
 import { graphTheme } from "../constants/graphTheme";
+import calcMax from "../utils/calcMax";
+import calcMin from "../utils/calcMin";
 
 const PriceGraph = ({ data, min, max }) => {
   return (
@@ -17,8 +19,8 @@ const PriceGraph = ({ data, min, max }) => {
         }}
         yScale={{
           type: "linear",
-          min: min - 1500,
-          max: max + 1500,
+          min: calcMin(min),
+          max: calcMax(max),
         }}
         curve="monotoneX"
         xFormat="time:%Y-%m-%d"
