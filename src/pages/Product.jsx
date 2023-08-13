@@ -34,6 +34,14 @@ const Product = () => {
     setRange(e.target.value);
   };
 
+  if (isLoading) {
+    return <div>Loading.....</div>;
+  }
+
+  if (isError) {
+    return <div>Error... Something went wrong..</div>;
+  }
+
   return (
     <div className="pt-[75px]">
       <div className="flex flex-1 justify-center flex-col md:flex-row items-center">

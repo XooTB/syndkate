@@ -11,7 +11,6 @@ const Hero = ({ windWidth }) => {
 
   const [leftSpring, leftAnimation] = useSpring(() => {
     if (windWidth >= 768) {
-      console.log(windWidth);
       return {
         from: { x: 0, width: "1vw", fontSize: "0rem" },
         to: {
