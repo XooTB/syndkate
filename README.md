@@ -8,7 +8,7 @@ Check out the live version of Syndkate at [https://syndkate.netlify.app/](https:
 
 ## Features
 
-- **Data Aggregation**: Syndkate aggregates data from a wide range of online tech stores such as (StarTech)[https://www.startech.com.bd/], (Ryans)[https://www.ryanscomputers.com/], (TechLand)[https://www.techlandbd.com/], (SkyLand)[https://www.skyland.com.bd/] and many more, ensuring users have access to an extensive selection of products and deals.
+- **Data Aggregation**: Syndkate aggregates data from a wide range of online tech stores such as [StarTech](https://www.startech.com.bd/), [Ryans](https://www.ryanscomputers.com/), [TechLand](https://www.techlandbd.com/), [SkyLand](https://www.skyland.com.bd/) and many more, ensuring users have access to an extensive selection of products and deals.
 
 - **Advanced Search**: The app offers advanced search functionality, allowing users to filter and search for products based on specific criteria such as category, price range, brand, and more.
 
