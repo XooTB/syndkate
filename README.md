@@ -2,9 +2,13 @@
 
 Syndkate is a powerful web application built using React, Vite, and Tailwind CSS, designed to streamline the process of finding the best tech deals from various online tech stores in Bangladesh. With Syndkate, users can make well-informed decisions by comparing prices, specifications, and deals from different stores, all in one convenient location.
 
+## Live Link
+
+Check out the live version of Syndkate at [https://syndkate.netlify.app/](https://syndkate.netlify.app/).
+
 ## Features
 
-- **Data Aggregation**: Syndkate aggregates data from a wide range of online tech stores such as StarTech, Ryans, TechLand, SkyLand and many more, ensuring users have access to an extensive selection of products and deals.
+- **Data Aggregation**: Syndkate aggregates data from a wide range of online tech stores such as (StarTech)[https://www.startech.com.bd/], (Ryans)[https://www.ryanscomputers.com/], (TechLand)[https://www.techlandbd.com/], (SkyLand)[https://www.skyland.com.bd/] and many more, ensuring users have access to an extensive selection of products and deals.
 
 - **Advanced Search**: The app offers advanced search functionality, allowing users to filter and search for products based on specific criteria such as category, price range, brand, and more.
 
@@ -23,10 +27,6 @@ Syndkate is a powerful web application built using React, Vite, and Tailwind CSS
 - **Data Scraping**: The app employs data scraping techniques to gather information from different online tech stores, ensuring accurate and up-to-date product data.
 
 - **RESTful APIs**: Robust back-end API to give you up-to-date data.
-
-## Live Link
-
-Check out the live version of Syndkate at [https://syndkate.netlify.app/](https://syndkate.netlify.app/).
 
 ## Contributing
 
