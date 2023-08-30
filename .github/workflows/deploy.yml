@@ -38,6 +38,9 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
+      - name: Switch Git Branch
+        run: git checkout github-deploy
+
       - name: Build project
         run: npm run build
 

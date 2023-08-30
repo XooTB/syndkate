@@ -9,19 +9,6 @@ const SearchBox = ({ onClick }) => {
   const [searchText, setSearchText] = useState("");
   const [finalText] = useDebounce(searchText, 1200);
   const [toggle, setToggle] = useState(false);
-  // const { isLoading, isError, data, error, status } = useQuery({
-  //   queryKey: [text, "searchProd"],
-  //   queryFn: async () => {
-  //     if (searchText) {
-  //       const response = await fetch(
-  //         `${import.meta.env.VITE_API}/product/search?title=${searchText}`
-  //       );
-  //       return response.json();
-  //     } else {
-  //       return [];
-  //     }
-  //   },
-  // });
 
   const { data, isLoading, isError, error, query } = useQuery();
 
@@ -62,11 +49,6 @@ const SearchBox = ({ onClick }) => {
         placeholder:font-normal placeholder:text-xs md:placeholder:text-base font-medium pl-3 md:pl-5"
           placeholder="Enter Product Name"
         />
-        {/* {toggle && (
-          <button className="px-8 py-2 bg-primary1 hover:bg-secondary1 hover:text-text1 rounded-lg mt-2 ml-3 font-semibold border-[1px] bordeac">
-            Search
-          </button>
-        )} */}
       </form>
 
       {isLoading && (
