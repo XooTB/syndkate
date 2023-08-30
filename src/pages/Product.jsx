@@ -3,6 +3,7 @@ import { convertData } from "../utils/convertData.js";
 import PriceGraph from "../components/PriceGraph.jsx";
 import { useParams } from "react-router-dom";
 import useProduct from "../hooks/useProduct.js";
+import { HashLoader } from "react-spinners";
 
 const Product = () => {
   const { id } = useParams();
@@ -35,7 +36,11 @@ const Product = () => {
   };
 
   if (isLoading) {
-    return <div>Loading.....</div>;
+    return (
+      <div className="w-screen min-h-screen flex items-center justify-center">
+        <HashLoader color="#38d8e0" />
+      </div>
+    );
   }
 
   if (isError) {
